@@ -9,8 +9,11 @@ import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.Toolbar
+import android.view.MenuItem
 import com.project.countries.R
 import com.project.countries.utiles.PreferenceUtil
+import com.project.countries.utiles.svg.svgurl.SvgLoader
+
 /**
  * Created by Geeta on 04/02/19.
  */
@@ -39,6 +42,10 @@ class CountriesDeshboardActivity : BaseActivity() {
              add(R.id.container_body, BaifDeshboardFragment.newInstance(), "BAIF")
          }*/
 
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        SvgLoader.pluck().close()
     }
     private fun initToolbar() {
 //        toolbar.toolbar_notification.visibility= View.GONE
@@ -77,4 +84,5 @@ class CountriesDeshboardActivity : BaseActivity() {
     override fun busInputReceived(busModal: Any?) {
 
     }
+
 }

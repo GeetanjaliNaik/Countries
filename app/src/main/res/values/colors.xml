@@ -8,4 +8,5 @@
     <color name="blue_50">#E1F5FE</color>
     <color name="primaryTextColor">#212121</color>
     <color name="secondaryTextColor">#757575</color>
+    <color name="toolbartext">#7CF5A5</color>
 </resources>

@@ -23,8 +23,11 @@ import com.project.countries.ui.adaptor.NoDataAdaptor
 import java.nio.file.Files.delete
 import java.nio.file.Files.isDirectory
 import com.bumptech.glide.Glide
+import com.project.countries.CountriesApplication
 //import com.bumptech.glide.util.Preconditions
 import com.project.countries.ui.screens.deshboard.CountriesDeshboardActivity
+import com.project.countries.utiles.AppUtils
+
 //import com.project.countries.utiles.svg.GlideApp
 
 
@@ -80,7 +83,10 @@ class CountriesOnlineFragment : BaseFragment(), CountriesOnlineFragContract.View
                     //do your work here
                     var searchName=fragView.search_online_et.text.toString()
 //                clearCache()
-                    countriesOnlinePresenter.getCountries(searchName)
+                    if(AppUtils.isNetworkAvailable(CountriesApplication.getApplicationContext()))
+                        countriesOnlinePresenter.getCountries(searchName)
+                    else
+                        showAlert("Please check internet connectivity")
                 }
             }
 

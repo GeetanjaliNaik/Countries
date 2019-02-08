@@ -8,10 +8,15 @@
                 name="country"
                 type="com.project.countries.data.remote.module.countries.Country" />
     </data>
+   <!-- <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">-->
     <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".ui.screens.details.CountryDetailActivity">
+            android:padding="@dimen/activity_vertical_margin"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:showIn="@layout/activity_country_details_layout">
 
         <android.support.v7.widget.CardView
                 android:id="@+id/agent_survey_card"
@@ -21,15 +26,9 @@
                 android:orientation="vertical"
                 android:padding="5dp"
                 app:cardCornerRadius="5dp">
-            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                <ImageView
-                        android:id="@+id/iv_country_flag"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:scaleType="centerInside"
-                        android:src="@mipmap/ic_launcher" />
+
 <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical"
-                android:layout_below="@+id/iv_country_flag">
+                >
 
                 <android.support.v7.widget.GridLayout
                         android:id="@+id/country_gv"
@@ -207,7 +206,7 @@
                 </LinearLayout>-->
             </LinearLayout>
 </LinearLayout>
-            </RelativeLayout>
+
         </android.support.v7.widget.CardView>
 
 
