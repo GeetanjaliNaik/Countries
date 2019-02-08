@@ -19,3 +19,34 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-keepattributes *Annotation*
+-dontwarn com.google.errorprone.annotations.**
+-keep public class * extends android.support.design.widget.CoordinatorLayout.Behavior { *; }
+-keep public class * extends android.support.design.widget.ViewOffsetBehavior { *; }
+-keep public class * extends android.support.design.widget.**{ *; }
+-keep class android.support.v7.widget.SearchView { *; }
+-keep public class * extends java.lang.annotation.Annotation { *; }
+
+
+-keep @**annotation** class * {*;}
+# for OKIO warnings
+-dontwarn okio.**
+
+-dontwarn okhttp3.**
+-dontwarn javax.annotation.**
+-dontwarn org.conscrypt.**
+
+-keep class com.project.countries.data.remote.module.** { *; }
+-keep class com.project.countries.database.countries.** { *; }
+#Retrofit
+# Platform calls Class.forName on types which do not exist on Android to determine platform.
+-dontnote retrofit2.Platform
+# Platform used when running on Java 8 VMs. Will not be used at runtime.
+-dontwarn retrofit2.Platform$Java8
+# Retain generic type information for use by reflection by converters and adapters.
+-keepattributes Signature
+# Retain declared checked exceptions for use by a Proxy instance.
+-keepattributes Exceptions
+-dontwarn org.bouncycastle.**
+-dontwarn okhttp3.internal.platform.ConscryptPlatform.**
+-dontwarn com.fasterxml.jackson.**
