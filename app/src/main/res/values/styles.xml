@@ -1,0 +1,78 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textAppearanceButton">@style/TextAppearance.AppCompat.Button.Custom</item>
+    </style>
+    <style name="TextAppearance.AppCompat.Button.Custom" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/whiteColor</item>
+    </style>
+
+    <style name="MaterialAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:background">@color/whiteColor</item>
+    </style>
+
+    <style name="ToolBarTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!-- android:textColorPrimary is the color of the title text in the Toolbar  -->
+        <item name="android:textColorPrimary">@color/whiteColor</item>
+        <!-- actionMenuTextColor is the color of the text of action (menu) items  -->
+        <item name="actionMenuTextColor">@color/whiteColor</item>
+        <!-- Tints the input fields like checkboxes and text fields -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Applies to views in their normal state. -->
+        <item name="colorControlNormal">@color/whiteColor</item>
+        <!-- Applies to views in their activated state (i.e checked or switches) -->
+        <item name="colorControlActivated">@color/blue_100</item>
+        <!-- Applied to framework control highlights (i.e ripples or list selectors) -->
+        <item name="colorControlHighlight">@color/blue_50</item>
+
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="TextviewShow">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_16_sp</item>
+        <item name="android:layout_marginTop">@dimen/spacing_micro</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+    <style name="LabelwithCol">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_14_sp</item>
+        <item name="android:layout_marginTop">@dimen/spacing_normal</item>
+        <item name="android:textColor">@color/secondaryTextColor</item>
+    </style>
+    <style name="TextviewShowWOC">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_16_sp</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+    <style name="LabelWithOutCol">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_14_sp</item>
+        <item name="android:layout_marginTop">@dimen/padding_normal</item>
+        <item name="android:textColor">@color/secondaryTextColor</item>
+    </style>
+    <style name="HeadWithOutCol">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_16_sp</item>
+        <item name="android:layout_marginTop">@dimen/padding_normal</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+</resources>

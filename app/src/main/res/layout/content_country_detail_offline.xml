@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+         xmlns:tools="http://schemas.android.com/tools"
+         xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+                name="country"
+                type="com.project.countries.database.countries.CountryDbData" />
+    </data>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.screens.details.CountryDetailActivity">
+
+        <android.support.v7.widget.CardView
+                android:id="@+id/agent_survey_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:padding="5dp"
+                app:cardCornerRadius="5dp">
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                <ImageView
+                        android:id="@+id/iv_country_offline_flag"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:scaleType="fitStart"
+                        android:src="@mipmap/ic_launcher" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                          android:orientation="vertical"
+            android:layout_below="@+id/iv_country_offline_flag">
+
+                    <android.support.v7.widget.GridLayout
+                            android:id="@+id/country_gv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/padding_normal"
+                            app:columnCount="2">
+                       <!-- <TextView
+                                style="@style/LabelwithCol"
+                                android:text="@string/nativeName_lb"
+                                app:layout_columnWeight="0.7" />
+                        <TextView
+                                style="@style/LabelwithCol"
+                                android:text="@string/alphaCode_lb"
+                                app:layout_columnWeight="0.3" />
+                        <TextView
+                                style="@style/TextviewShow"
+                                android:text="@{country.nativeName}"
+                                app:layout_columnWeight="0.7" />
+                        <TextView
+                                style="@style/TextviewShow"
+                                android:alphaCodeDb="@{country}"
+                                app:layout_columnWeight="0.3" />-->
+                        <TextView
+                                style="@style/LabelwithCol"
+                                android:text="@string/capital_lb"
+                                app:layout_columnWeight="0.7" />
+                        <TextView
+                                style="@style/LabelwithCol"
+                                android:text="@string/callingCode_lb"
+                                app:layout_columnWeight="0.3" />
+                        <TextView
+                                style="@style/TextviewShow"
+                                android:text="@{country.capital}"
+                                app:layout_columnWeight="0.7" />
+                        <TextView
+                                style="@style/TextviewShow"
+                                android:text="@{``+country.callingCodes[0]}"
+                                app:layout_columnWeight="0.3" />
+                    </android.support.v7.widget.GridLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding_normal"
+                        android:orientation="vertical">
+                    <!--<TextView
+                            style="@style/TextviewShowWOC"
+                            app:viewVisibility="@{country.cioc}"
+                            android:text="@{country.cioc!=null ?`Cioc : `+country.cioc :`` }" />-->
+                    <TextView
+                            style="@style/LabelWithOutCol"
+                            android:text="@string/region_sub_lb" />
+
+                    <TextView
+                            style="@style/TextviewShowWOC"
+                            android:text="@{country.region+` `+(country.subregion!=null?`,`+country.subregion:``)}" />
+                  <!--  <TextView
+                            style="@style/LabelWithOutCol"
+                            android:text="@string/population_lb" />
+
+                    <TextView
+                            style="@style/TextviewShowWOC"
+                            android:text="@{` `+country.population}" />
+                    <LinearLayout
+                            android:id="@+id/altspellings_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:viewVisibility="@{country.altSpellings}"
+                            android:orientation="vertical">
+                        <TextView
+                                style="@style/LabelWithOutCol"
+                                android:text="@string/altspellings_lb" />
+
+                        <TextView
+                                style="@style/TextviewShowWOC"
+                                android:altspellings="@{country.altSpellings}" />
+                    </LinearLayout>
+                    <TextView
+                            style="@style/HeadWithOutCol"
+                            android:text="@string/area_detail_lb" />
+                    <TextView
+                            style="@style/TextviewShowWOC"
+                            app:viewVisibility="@{country.demonym}"
+                            android:text="@{country.demonym!=null ?`Demonym : `+country.demonym :`` }" />
+                    <TextView
+                            style="@style/TextviewShowWOC"
+                            app:viewVisibility="@{``+country.area}"
+                            android:text="@{country.area!=null ?`Area : `+country.area :`` }" />
+                    <TextView
+                            style="@style/TextviewShowWOC"
+                            app:viewVisibility="@{``+country.gini}"
+                            android:text="@{country.gini!=null ?`Gini : `+country.gini :`` }" />
+                    <TextView
+                            style="@style/TextviewShowWOC"
+                            app:viewVisibility="@{country.numericCode}"
+                            android:text="@{country.numericCode!=null ?`Numeric Code : `+country.numericCode :`` }" />
+                    <TextView
+                            style="@style/LabelWithOutCol"
+                            android:viewVisibility="@{country.latlng}"
+                            android:text="@string/latlong_lb" />
+
+                    <TextView
+                            style="@style/TextviewShowWOC"
+                            android:viewVisibility="@{country.latlng}"
+                            android:text="@{``+country.latlng[0]+` , `+country.latlng[1]}" />-->
+                    <TextView
+                            style="@style/TextviewShowWOC"
+                            android:viewVisibility="@{country.timezones}"
+                            android:text="@{` Time Zone : `+country.timezones[0]}" />
+
+                   <!-- <LinearLayout
+                            android:id="@+id/borders_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:viewVisibility="@{country.borders}"
+                            android:orientation="vertical">
+                        <TextView
+                                style="@style/LabelWithOutCol"
+                                android:text="@string/borders_lb" />
+
+                        <TextView
+                                style="@style/TextviewShowWOC"
+                                android:textappend="@{country.borders}" />
+                    </LinearLayout>-->
+                    <LinearLayout
+                            android:id="@+id/currency_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:viewVisibility="@{country.currencies}"
+                            android:orientation="vertical"
+                            android:currenciesDb="@{country.currencies}">
+                        <TextView
+                                style="@style/LabelWithOutCol"
+                                android:text="@string/currencies_lb" />
+
+                        <!--<TextView
+                                style="@style/TextviewShowWOC"
+                                android:text="@{`Code :`+country.currencies[0].code}" />
+                        <TextView
+                                style="@style/TextviewShowWOC"
+                                android:text="@{`Name :`+country.currencies[0].name}" />
+                        <TextView
+                                style="@style/TextviewShowWOC"
+                                android:text="@{`Symbol :`+country.currencies[0].symbol}" />-->
+                    </LinearLayout>
+                    <LinearLayout
+                            android:id="@+id/language_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:viewVisibility="@{country.languages}"
+                            android:orientation="vertical"
+                            android:languageDb="@{country.languages}" >
+                        <TextView
+                                style="@style/LabelWithOutCol"
+                                android:text="@string/language_lb" />
+
+
+                    </LinearLayout>
+                  <!--  <LinearLayout
+                            android:id="@+id/regionalBlocs_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:viewVisibility="@{country.regionalBlocs}"
+                            android:orientation="vertical"
+                            android:regionalblocsdb="@{country.regionalBlocs}">
+                        <TextView
+                                style="@style/LabelWithOutCol"
+                                android:text="@string/regionalblocs_lb" />
+
+                    </LinearLayout>-->
+                   <!-- <LinearLayout
+                            android:id="@+id/trans_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:translationNamedb="@{country.translations}">
+                        <TextView
+                                style="@style/LabelWithOutCol"
+                                android:text="@string/country_name_translations" />
+
+
+                    </LinearLayout>-->
+                </LinearLayout>
+
+            </LinearLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+
+    </ScrollView>
+</layout>
