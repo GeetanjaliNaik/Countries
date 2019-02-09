@@ -61,7 +61,12 @@ class ErrorInterceptor(var appData: AppData) : Interceptor {
             val toJson = Gson().toJson(checkServerResponse(ErrorResponse("", "Too Many Request, Please Try after some time", "429", null), response))
             val body = ResponseBody.create(contentType, toJson)
             return response.newBuilder().body(body).build()
-        } else if (response.code() == 500) {
+        } else if (response.code() == 443) {
+            val toJson = Gson().toJson(checkServerResponse(ErrorResponse("", "Server Has some problem, Please Try after some time", "443", null), response))
+            val body = ResponseBody.create(contentType, toJson)
+            return response.newBuilder().body(body).build()
+        }
+        else if (response.code() == 500) {
             val toJson = Gson().toJson(checkServerResponse(ErrorResponse("", "Service unavailable", "500", null), response))
             val body = ResponseBody.create(contentType, toJson)
             return response.newBuilder().body(body).build()
