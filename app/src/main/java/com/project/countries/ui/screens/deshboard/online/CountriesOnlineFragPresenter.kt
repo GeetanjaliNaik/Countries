@@ -4,6 +4,7 @@ import android.text.TextUtils
 import android.util.Log
 import com.project.countries.api.datamanager.CountriesDataManager
 import com.project.countries.data.remote.module.countries.Country
+import com.project.countries.utiles.CommonResponseParser
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
@@ -25,8 +26,9 @@ class CountriesOnlineFragPresenter  @Inject constructor():  CountriesOnlineFragC
             view!!.updateUIforCountries(result)
         }, { error ->
             view?.let {
+
                 view!!.showHideProgressDialog(false)
-//                CommonResponseParser.ErrorParser.parseError(error, true)?.let { it1 -> view!!.showToastAlert(it1) }
+                CommonResponseParser.ErrorParser.parseError(error, true)?.let { it1 -> view!!.showToastAlert(it1) }
             }
         })
     }
